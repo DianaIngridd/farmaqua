@@ -1,0 +1,31 @@
+{
+  "name": "farmaqua",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "jest --config jest.config.js",
+    "test:unit": "jest --config jest.config.js tests/unit",
+    "test:api": "jest --config jest.config.js tests/api",
+    "test:e2e": "jest --config jest.e2e.config.js --runInBand"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.2.1",
+    "mongoose": "^9.6.3",
+    "multer": "^2.1.1",
+    "pdfkit": "^0.18.0"
+  },
+  "devDependencies": {
+    "bootstrap": "^5.3.0",
+    "chart.js": "^4.6.1",
+    "jest": "^30.5.2",
+    "selenium-webdriver": "^4.52.0",
+    "supertest": "^7.3.2",
+    "sweetalert2": "^11.26.25"
+  }
+}
