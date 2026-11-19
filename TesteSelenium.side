@@ -1,0 +1,450 @@
+{
+  "id": "1d94aada-0f4a-4e26-976e-57827559f54e",
+  "version": "2.0",
+  "name": "Farmaqua_Testes_CT06_CT10",
+  "url": "http://localhost:3000",
+  "tests": [
+    {
+      "id": "882caf65-084a-4ffc-bb16-fd9b42d5598a",
+      "name": "CT06 - Lancar leitura do hidrometro",
+      "commands": [
+        {
+          "id": "f1ef9d76-d821-4141-a9b5-63a01977fcba",
+          "comment": "",
+          "command": "open",
+          "target": "/teladelogin.html",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "3f3017c2-68ad-4d05-810a-22b4c5c7183b",
+          "comment": "",
+          "command": "executeScript",
+          "target": "localStorage.clear();localStorage.setItem('userRole','admin');",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "14a99a99-7802-4a7d-a6b2-6229df147be3",
+          "comment": "",
+          "command": "open",
+          "target": "/hidrometro.html?role=admin",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "8a077263-0137-4c8a-980e-4ef2d874caf7",
+          "comment": "",
+          "command": "setWindowSize",
+          "target": "1280x900",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "27c3065d-30b2-4aac-9707-a9938c701657",
+          "comment": "",
+          "command": "executeScript",
+          "target": "var e=document.getElementById('inputData');e.value='2026-11-17';e.dispatchEvent(new Event('input',{bubbles:true}));e.dispatchEvent(new Event('change',{bubbles:true}));",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "900da0bf-3ee2-49b7-8133-13cb71210036",
+          "comment": "",
+          "command": "executeScript",
+          "target": "var e=document.getElementById('inputValor');e.value='1250.500';e.dispatchEvent(new Event('input',{bubbles:true}));e.dispatchEvent(new Event('change',{bubbles:true}));",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "83a11e63-6bf3-4644-bdaf-f41c75a67300",
+          "comment": "",
+          "command": "select",
+          "target": "id=selectAtividade",
+          "targets": [],
+          "value": "label=Nenhuma (Rotina Normal)"
+        },
+        {
+          "id": "32a9b82f-e904-470b-8ae9-e57250fc21d0",
+          "comment": "",
+          "command": "click",
+          "target": "css=button.btn-confirmar",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c3243ab0-2849-40e3-8814-8ff1ac7b1d3a",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "css=.swal2-title",
+          "targets": [],
+          "value": "10000"
+        },
+        {
+          "id": "5ad59fcb-12b9-49c0-a5ae-9cf9db74ec69",
+          "comment": "",
+          "command": "assertText",
+          "target": "css=.swal2-title",
+          "targets": [],
+          "value": "Lançamento Concluído!"
+        }
+      ]
+    },
+    {
+      "id": "85c9df57-0326-4b6b-9a91-db3d5b44a319",
+      "name": "CT07 - Exibir campo Outro no tipo de atividade",
+      "commands": [
+        {
+          "id": "cdeef81b-c06c-4daf-81be-ad475d43df1b",
+          "comment": "",
+          "command": "open",
+          "target": "/teladelogin.html",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "89740263-d8f4-426f-a901-9dbd0cafb6e7",
+          "comment": "",
+          "command": "executeScript",
+          "target": "localStorage.clear();localStorage.setItem('userRole','admin');",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "9b39a096-e968-4757-b6b9-2bf7b74de049",
+          "comment": "",
+          "command": "open",
+          "target": "/hidrometro.html?role=admin",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "1f3500dc-42b2-45a7-b7f9-97347f09407d",
+          "comment": "",
+          "command": "setWindowSize",
+          "target": "1280x900",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "902b406e-b73f-4b7a-9720-68b668583624",
+          "comment": "",
+          "command": "waitForElementNotVisible",
+          "target": "id=campoOutro",
+          "targets": [],
+          "value": "5000"
+        },
+        {
+          "id": "de5c64a8-a3aa-42cb-b4fe-e6c241ded459",
+          "comment": "",
+          "command": "select",
+          "target": "id=selectAtividade",
+          "targets": [],
+          "value": "label=Outro (Especificar)"
+        },
+        {
+          "id": "9145adf0-68e4-4d66-b6dd-1a846fecff8b",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "id=campoOutro",
+          "targets": [],
+          "value": "5000"
+        },
+        {
+          "id": "8934afc1-3edd-47be-9171-c871022576b8",
+          "comment": "",
+          "command": "verifyElementPresent",
+          "target": "css=textarea[name='descricaoOutro']",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "90f74b17-28ff-4f9d-9228-16c4f3949e6d",
+          "comment": "",
+          "command": "select",
+          "target": "id=selectAtividade",
+          "targets": [],
+          "value": "label=Limpeza pesada do laboratório"
+        },
+        {
+          "id": "48fc77ce-8600-4db8-922b-64f0e0b102ea",
+          "comment": "",
+          "command": "waitForElementNotVisible",
+          "target": "id=campoOutro",
+          "targets": [],
+          "value": "5000"
+        }
+      ]
+    },
+    {
+      "id": "4505d51f-6d53-4b33-a0ea-8b8c41204bf5",
+      "name": "CT08 - Configurar meta de consumo",
+      "commands": [
+        {
+          "id": "843bdc65-1528-46dc-81c8-d3b596db8557",
+          "comment": "",
+          "command": "open",
+          "target": "/teladelogin.html",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "b060091f-1953-4607-ac4e-f7933c5f8c94",
+          "comment": "",
+          "command": "executeScript",
+          "target": "localStorage.clear();localStorage.setItem('userRole','admin');",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "2911d158-8a82-41a6-aab1-f19588c72103",
+          "comment": "",
+          "command": "open",
+          "target": "/metas.html?role=admin",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "4600de86-1ef3-4f50-963d-1a66a2301940",
+          "comment": "",
+          "command": "setWindowSize",
+          "target": "1280x900",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "0e4aedba-b669-4926-975c-93bc2b78ebf6",
+          "comment": "",
+          "command": "select",
+          "target": "name=mesReferencia",
+          "targets": [],
+          "value": "label=Dezembro/2026"
+        },
+        {
+          "id": "3e5423f4-feab-4ae4-918e-7a07faf35955",
+          "comment": "",
+          "command": "executeScript",
+          "target": "var e=document.getElementById('inputLimiteM3');e.value='20';e.dispatchEvent(new Event('input',{bubbles:true}));e.dispatchEvent(new Event('change',{bubbles:true}));",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "09bbd734-8d5f-468a-8b53-070e6a2ff79d",
+          "comment": "",
+          "command": "executeScript",
+          "target": "var e=document.getElementsByName('emailAlerta')[0];e.value='alerta@oliboti.com.br';e.dispatchEvent(new Event('input',{bubbles:true}));e.dispatchEvent(new Event('change',{bubbles:true}));",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "363aa8fc-83aa-4cfc-a22d-54d9c7bcd44a",
+          "comment": "",
+          "command": "click",
+          "target": "css=button.btn-metas",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "377e732b-a6b0-4950-bc6e-d0aa70c3a874",
+          "comment": "",
+          "command": "pause",
+          "target": "",
+          "targets": [],
+          "value": "2000"
+        },
+        {
+          "id": "c15226ab-dc78-47ec-bb77-64ec7c1ee771",
+          "comment": "",
+          "command": "executeScript",
+          "target": "return window.location.search.indexOf('salvo=true') >= 0;",
+          "targets": [],
+          "value": "salvo"
+        },
+        {
+          "id": "f1f96fdf-c345-4046-ad42-8a0dcaa695be",
+          "comment": "",
+          "command": "assert",
+          "target": "salvo",
+          "targets": [],
+          "value": "true"
+        },
+        {
+          "id": "bea21880-b569-4834-9c60-440391ad1165",
+          "comment": "",
+          "command": "assertValue",
+          "target": "id=inputLimiteM3",
+          "targets": [],
+          "value": "20"
+        }
+      ]
+    },
+    {
+      "id": "95eeb5e0-67b5-4f8f-97f3-90f17f2fc586",
+      "name": "CT09 - Funcionario nao ve menus administrativos",
+      "commands": [
+        {
+          "id": "43722730-940e-4714-b9d8-4eeb5f7fc470",
+          "comment": "",
+          "command": "open",
+          "target": "/teladelogin.html",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "a5e908ca-d26b-4505-9abd-d5ff58e7b453",
+          "comment": "",
+          "command": "executeScript",
+          "target": "localStorage.clear();",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "2ece6e41-fb2c-4c87-ad53-91a6a183c8b1",
+          "comment": "",
+          "command": "open",
+          "target": "/dashboarddeconsumo.html?role=func",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "7ef0ad6f-e26e-4558-912e-4316c9de583a",
+          "comment": "",
+          "command": "setWindowSize",
+          "target": "1280x900",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "7d1df0ce-1c71-4e08-ba39-1323c2a45722",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "id=lnkHidrometro",
+          "targets": [],
+          "value": "5000"
+        },
+        {
+          "id": "cbc2ec9b-2efb-4442-be8d-6549bb047eb1",
+          "comment": "",
+          "command": "waitForElementNotVisible",
+          "target": "id=lnkRelatorios",
+          "targets": [],
+          "value": "5000"
+        },
+        {
+          "id": "ac013555-d587-4120-8bfb-a721e0a668e3",
+          "comment": "",
+          "command": "waitForElementNotVisible",
+          "target": "id=lnkMetas",
+          "targets": [],
+          "value": "5000"
+        },
+        {
+          "id": "a6f3aeac-a118-429e-b49e-55722a4d5d6a",
+          "comment": "",
+          "command": "waitForElementNotVisible",
+          "target": "id=lnkCadastro",
+          "targets": [],
+          "value": "5000"
+        },
+        {
+          "id": "4a14c81a-6435-4e93-b9ef-1c1700fab625",
+          "comment": "",
+          "command": "assertText",
+          "target": "id=nomeUsuario",
+          "targets": [],
+          "value": "Funcionário"
+        }
+      ]
+    },
+    {
+      "id": "78151863-6974-48a2-b3ad-5f934052cb67",
+      "name": "CT10 - Bloquear funcionario no cadastro de usuario",
+      "commands": [
+        {
+          "id": "a36cd97c-8b17-461f-89b5-c364c511a3d0",
+          "comment": "",
+          "command": "open",
+          "target": "/teladelogin.html",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c2eb9be0-b44c-43c1-b50f-d0ba53b3d135",
+          "comment": "",
+          "command": "executeScript",
+          "target": "localStorage.clear();localStorage.setItem('userRole','func');",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "a1ef0ddd-04fd-45dc-a832-d3ee0d399790",
+          "comment": "",
+          "command": "open",
+          "target": "/cadastrousuario.html",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "b51a2085-17c4-4181-acdc-af4a1ab28f1a",
+          "comment": "",
+          "command": "setWindowSize",
+          "target": "1280x900",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "8e5094f5-6082-4a8f-8535-aa284d65951b",
+          "comment": "",
+          "command": "pause",
+          "target": "",
+          "targets": [],
+          "value": "1500"
+        },
+        {
+          "id": "89806a73-cdf9-4d6b-b7dc-c1d82ace98c9",
+          "comment": "",
+          "command": "executeScript",
+          "target": "return window.location.pathname.indexOf('dashboarddeconsumo.html') >= 0 && window.location.search.indexOf('negado=true') >= 0;",
+          "targets": [],
+          "value": "bloqueado"
+        },
+        {
+          "id": "6d9d9ca6-7983-41b2-9f86-790fb700d57a",
+          "comment": "",
+          "command": "assert",
+          "target": "bloqueado",
+          "targets": [],
+          "value": "true"
+        },
+        {
+          "id": "6d13ca69-e39a-4296-8996-831f2e339c01",
+          "comment": "",
+          "command": "waitForElementNotVisible",
+          "target": "id=lnkCadastro",
+          "targets": [],
+          "value": "5000"
+        }
+      ]
+    }
+  ],
+  "suites": [
+    {
+      "id": "ee7d463e-6a63-474d-ac63-30ecbf6e4f85",
+      "name": "Suite Testes Automatizados CT06-CT10",
+      "persistSession": false,
+      "parallel": false,
+      "timeout": 300,
+      "tests": [
+        "882caf65-084a-4ffc-bb16-fd9b42d5598a",
+        "85c9df57-0326-4b6b-9a91-db3d5b44a319",
+        "4505d51f-6d53-4b33-a0ea-8b8c41204bf5",
+        "95eeb5e0-67b5-4f8f-97f3-90f17f2fc586",
+        "78151863-6974-48a2-b3ad-5f934052cb67"
+      ]
+    }
+  ],
+  "urls": [
+    "http://localhost:3000/"
+  ],
+  "plugins": []
+}
